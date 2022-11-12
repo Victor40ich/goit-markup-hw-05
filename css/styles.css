@@ -330,6 +330,10 @@ p {
 .our-work-list {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.our-work-list .our-work-item {
+    position: relative;
 }
 
 .our-team {
@@ -346,6 +350,34 @@ p {
 .our-work-item:not(:last-child) {
     margin-right: 30px;
 }
+.our-work-item::before {
+    display: inline-block;
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
+}
+.product-description {
+    position: absolute;
+    top: 84%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: var(--background-color);
+
+    font-size: 14px;
+    line-height: calc(16/14);
+    text-align: center;
+    letter-spacing: 0.03em;
+} 
+    
 .our-team-list {
     margin-top: 50px;
     display: flex;
@@ -394,6 +426,8 @@ margin-right: 10px;
 }
 .social-icon {
     fill: #AFB1B8;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-icons-list .social-item:hover .social-icon {
         fill: #FFFFFF;
@@ -451,11 +485,15 @@ margin-right: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-icon {
     fill: #AFB1B8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.regular-customers-item:hover {
+.regular-customers-item:hover,
+.regular-customers-item:focus {
     border: 1px solid var(--first-title-color);
     border-radius: 4px;
 }
@@ -486,6 +524,8 @@ fill: var(--first-title-color);
     line-height: calc(24/14);
     letter-spacing: 0.03em;
     color: var(--background-color);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logo-web-footer {
     font-family: 'Raleway';
@@ -617,6 +657,8 @@ fill: var(--first-title-color);
     margin-top: 16px;
     border-radius: 50%;
     margin-bottom: 20px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-footer-item:not(:last-child) {
     margin-right: 10px;
@@ -632,6 +674,8 @@ fill: var(--first-title-color);
     display: flex;
     align-items: center;
     justify-content: center;
+
+
 }
 .social-footer-icon {
     fill: var(--background-color);
